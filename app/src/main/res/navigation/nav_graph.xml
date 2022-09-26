@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.clinicapp.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_symptomsFragment"
+            app:destination="@id/symptomsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/symptomsFragment"
+        android:name="com.example.clinicapp.symptoms.SymptomsFragment"
+        android:label="fragment_symptoms"
+        tools:layout="@layout/fragment_symptoms" >
+        <action
+            android:id="@+id/action_symptomsFragment_to_reportFragment"
+            app:destination="@id/reportFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="com.example.clinicapp.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" >
+        <action
+            android:id="@+id/action_optionsFragment_to_meatFragment"
+            app:destination="@id/meatFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_inhalantsFragment"
+            app:destination="@id/inhalantsFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_vegetablesFragment"
+            app:destination="@id/vegetablesFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_fruitsFragment"
+            app:destination="@id/fruitsFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_otherFoodsFragment"
+            app:destination="@id/otherFoodsFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_reportFragment"
+            app:destination="@id/reportFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_patientsListFragment"
+            app:destination="@id/patientsListFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/meatFragment"
+        android:name="com.example.clinicapp.allergen.MeatFishFragment"
+        android:label="fragment_meat_fish"
+        tools:layout="@layout/fragment_meat_fish" >
+        <action
+            android:id="@+id/action_meatFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_meatFragment_to_inhalantsFragment"
+            app:destination="@id/inhalantsFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/inhalantsFragment"
+        android:name="com.example.clinicapp.allergen.InhalantsFragment"
+        android:label="fragment_inhalants"
+        tools:layout="@layout/fragment_inhalants" >
+        <action
+            android:id="@+id/action_inhalantsFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_inhalantsFragment_to_vegetablesFragment"
+            app:destination="@id/vegetablesFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesFragment"
+        android:name="com.example.clinicapp.allergen.VegetablesFragment"
+        android:label="fragment_vegetables"
+        tools:layout="@layout/fragment_vegetables" >
+        <action
+            android:id="@+id/action_vegetablesFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_vegetablesFragment_to_fruitsFragment"
+            app:destination="@id/fruitsFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsFragment"
+        android:name="com.example.clinicapp.allergen.FruitsFragment"
+        android:label="fragment_fruits"
+        tools:layout="@layout/fragment_fruits" >
+        <action
+            android:id="@+id/action_fruitsFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_fruitsFragment_to_otherFoodsFragment"
+            app:destination="@id/otherFoodsFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />v
+    </fragment>
+    <fragment
+        android:id="@+id/otherFoodsFragment"
+        android:name="com.example.clinicapp.allergen.OtherFoodsFragment"
+        android:label="fragment_other_foods"
+        tools:layout="@layout/fragment_other_foods" >
+        <action
+            android:id="@+id/action_otherFoodsFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.example.clinicapp.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" >
+        <argument
+            android:name="fruitsData"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.clinicapp.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.clinicapp.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_patientsListFragment"
+            app:destination="@id/patientsListFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_expertFragment"
+            app:destination="@id/expertFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_doctorFragment"
+            app:destination="@id/doctorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.clinicapp.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/patientsListFragment"
+        android:name="com.example.clinicapp.technician.PatientsListFragment"
+        android:label="fragment_patients_list"
+        tools:layout="@layout/fragment_patients_list" >
+        <action
+            android:id="@+id/action_patientsListFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/expertFragment"
+        android:name="com.example.clinicapp.ExpertFragment"
+        android:label="fragment_expert"
+        tools:layout="@layout/fragment_expert" >
+        <action
+            android:id="@+id/action_expertFragment_to_viewKnowledgeFragment"
+            app:destination="@id/viewKnowledgeFragment" />
+        <action
+            android:id="@+id/action_expertFragment_to_updatePreferenceFragment"
+            app:destination="@id/updatePreferenceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewKnowledgeFragment"
+        android:name="com.example.clinicapp.ViewKnowledgeFragment"
+        android:label="fragment_view_knowledge"
+        tools:layout="@layout/fragment_view_knowledge" />
+    <fragment
+        android:id="@+id/updatePreferenceFragment"
+        android:name="com.example.clinicapp.UpdatePreferenceFragment"
+        android:label="fragment_update_preference"
+        tools:layout="@layout/fragment_update_preference" />
+    <fragment
+        android:id="@+id/doctorFragment"
+        android:name="com.example.clinicapp.DoctorFragment"
+        android:label="fragment_doctor"
+        tools:layout="@layout/fragment_doctor" >
+        <action
+            android:id="@+id/action_doctorFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+</navigation>

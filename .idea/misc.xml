@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/drawable-v24/outline_add_24.xml" value="0.1675925925925926" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/drawable-v24/outline_arrow_forward_ios_24.xml" value="0.1675925925925926" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/drawable-v24/outline_close_24.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/drawable-v24/outline_description_24.xml" value="0.1675925925925926" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/drawable-v24/outline_done_24.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/drawable-v24/outline_note_add_24.xml" value="0.1675925925925926" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/drawable-v24/round_format_list_bulleted_24.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/content_main.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/details_main.xml" value="0.1" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_details.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_doctor.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_expert.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_first.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_fruits.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_inhalants.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_login.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_meat.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_meat_fish.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_options.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_other_foods.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_patients_list.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_report.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_second.xml" value="0.1" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_symptoms.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_update_preference.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_vegetables.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/fragment_view_knowledge.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/item_row_allergen.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/item_row_patient.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/item_row_report.xml" value="0.22" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/item_row_symptoms.xml" value="0.1671195652173913" />
+        <entry key="..\:/Users/RIYA WAIRAGADE/AndroidStudioProjects/ClinicApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.15925925925925927" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
