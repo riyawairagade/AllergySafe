@@ -18,9 +18,6 @@
         android:name="com.example.clinicapp.symptoms.SymptomsFragment"
         android:label="fragment_symptoms"
         tools:layout="@layout/fragment_symptoms" >
-        <action
-            android:id="@+id/action_symptomsFragment_to_reportFragment"
-            app:destination="@id/reportFragment" />
         <argument
             android:name="name"
             app:argType="string" />
@@ -48,9 +45,6 @@
         <action
             android:id="@+id/action_optionsFragment_to_otherFoodsFragment"
             app:destination="@id/otherFoodsFragment" />
-        <action
-            android:id="@+id/action_optionsFragment_to_reportFragment"
-            app:destination="@id/reportFragment" />
         <action
             android:id="@+id/action_optionsFragment_to_patientsListFragment"
             app:destination="@id/patientsListFragment" />
@@ -154,7 +148,10 @@
         android:label="fragment_report"
         tools:layout="@layout/fragment_report" >
         <argument
-            android:name="fruitsData"
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phone"
             app:argType="string" />
     </fragment>
     <fragment
@@ -232,5 +229,17 @@
         <action
             android:id="@+id/action_doctorFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_doctorFragment_to_doctorPatientsListFragment"
+            app:destination="@id/doctorPatientsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorPatientsListFragment"
+        android:name="com.example.clinicapp.DoctorPatientsListFragment"
+        android:label="fragment_doctor_patients_list"
+        tools:layout="@layout/fragment_doctor_patients_list" >
+        <action
+            android:id="@+id/action_doctorPatientsListFragment_to_reportFragment"
+            app:destination="@id/reportFragment" />
     </fragment>
 </navigation>

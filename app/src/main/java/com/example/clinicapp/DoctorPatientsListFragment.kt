@@ -1,6 +1,5 @@
-package com.example.clinicapp.technician
+package com.example.clinicapp
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,15 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.clinicapp.R
-import com.example.clinicapp.databinding.FragmentPatientsListBinding
+import com.example.clinicapp.databinding.FragmentDoctorBinding
+import com.example.clinicapp.databinding.FragmentDoctorPatientsListBinding
+import com.example.clinicapp.technician.Patient
+import com.example.clinicapp.technician.PatientAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class PatientsListFragment : Fragment() {
 
-    private var _binding: FragmentPatientsListBinding? = null
-    private val patientsAdapter = PatientAdapter()
+class DoctorPatientsListFragment : Fragment() {
+    private var _binding: FragmentDoctorPatientsListBinding? = null
+    private val doctorPatientsListAdapter = DoctorPatientsListAdapter()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -27,9 +28,8 @@ class PatientsListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentPatientsListBinding.inflate(inflater, container, false)
+        _binding = FragmentDoctorPatientsListBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,16 +44,11 @@ class PatientsListFragment : Fragment() {
                 }
                 val data = mutableListOf<Patient>()
                 for (doc in value!!) { //we have verified that there is no error so value will not be null
-                    if(doc.data["Test recommended"] == true){
                         data.add(Patient(doc.get("Name").toString(), doc.get("Phone").toString()))
-                    }
                 }
-                patientsAdapter.patientsData = data
+                doctorPatientsListAdapter.patientsData = data
             }
-
-//        val data = listOf(Patient("1. P1 | 25F"), Patient("2. P2 | 40M"), Patient("3. P5 | 18M"))
-
-        binding.recyclerView2.adapter = patientsAdapter
+        binding.recyclerView.adapter = doctorPatientsListAdapter
     }
 
     override fun onDestroyView() {

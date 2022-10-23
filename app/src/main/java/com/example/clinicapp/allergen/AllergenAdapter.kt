@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.clinicapp.MainActivity
 import com.example.clinicapp.databinding.ItemRowAllergenBinding
@@ -67,6 +68,8 @@ class AllergenAdapter : RecyclerView.Adapter<AllergenAdapter.ViewHolder>(){
                 allergenList.put(allergen.name, allergen.nr)
                 val data = hashMapOf(allergen.name to "nr")
 
+                Log.d(javaClass.simpleName, "name: $pname")
+
                 db.collection("Patients").document(pname).collection("Symptoms").document("Allergens")
                     .set(data, SetOptions.merge())
                     .addOnSuccessListener {
@@ -75,6 +78,17 @@ class AllergenAdapter : RecyclerView.Adapter<AllergenAdapter.ViewHolder>(){
                     .addOnFailureListener { e ->
                         Log.w(javaClass.simpleName, "Error adding document", e)
                     }
+
+                val test = hashMapOf("Test completed" to true)
+                db.collection("Patients").document(pname)
+                    .set(test, SetOptions.merge())
+                    .addOnSuccessListener {
+                        Log.d(javaClass.simpleName, "DocumentSnapshot")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(javaClass.simpleName, "Error adding document", e)
+                    }
+
             }
             r1.setOnClickListener{
                 a.setTextColor(Color.parseColor("#FFFF00"))
@@ -83,6 +97,16 @@ class AllergenAdapter : RecyclerView.Adapter<AllergenAdapter.ViewHolder>(){
 
                 db.collection("Patients").document(pname).collection("Symptoms").document("Allergens")
                     .set(data, SetOptions.merge())
+                    .addOnSuccessListener {
+                        Log.d(javaClass.simpleName, "DocumentSnapshot")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(javaClass.simpleName, "Error adding document", e)
+                    }
+
+                val test = hashMapOf("Test completed" to true)
+                db.collection("Patients").document(pname)
+                    .set(test, SetOptions.merge())
                     .addOnSuccessListener {
                         Log.d(javaClass.simpleName, "DocumentSnapshot")
                     }
@@ -103,6 +127,16 @@ class AllergenAdapter : RecyclerView.Adapter<AllergenAdapter.ViewHolder>(){
                     .addOnFailureListener { e ->
                         Log.w(javaClass.simpleName, "Error adding document", e)
                     }
+
+                val test = hashMapOf("Test completed" to true)
+                db.collection("Patients").document(pname)
+                    .set(test, SetOptions.merge())
+                    .addOnSuccessListener {
+                        Log.d(javaClass.simpleName, "DocumentSnapshot")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(javaClass.simpleName, "Error adding document", e)
+                    }
             }
             r3.setOnClickListener{
                 a.setTextColor(Color.parseColor("#FF0000"))
@@ -111,6 +145,16 @@ class AllergenAdapter : RecyclerView.Adapter<AllergenAdapter.ViewHolder>(){
 
                 db.collection("Patients").document(pname).collection("Symptoms").document("Allergens")
                     .set(data, SetOptions.merge())
+                    .addOnSuccessListener {
+                        Log.d(javaClass.simpleName, "DocumentSnapshot")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(javaClass.simpleName, "Error adding document", e)
+                    }
+
+                val test = hashMapOf("Test completed" to true)
+                db.collection("Patients").document(pname)
+                    .set(test, SetOptions.merge())
                     .addOnSuccessListener {
                         Log.d(javaClass.simpleName, "DocumentSnapshot")
                     }

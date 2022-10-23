@@ -38,6 +38,9 @@ class InhalantsFragment : Fragment() {
 //        var fruitsData = args.fruitsData
         val pname = args.name
         val phone = args.phone
+        allergenAdapter.pname = pname
+        allergenAdapter.phone = phone
+
 //        fruitsData = fruitsData.substring(1, fruitsData.length -1)
         var inhalantsData = allergenAdapter.allergenList
 

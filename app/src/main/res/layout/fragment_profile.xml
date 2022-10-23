@@ -25,7 +25,7 @@
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="99dp"
-                android:layout_height="38dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="100dp"
                 android:text="Name:"
@@ -36,7 +36,7 @@
             <EditText
                 android:id="@+id/username"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="24dp"
@@ -45,8 +45,7 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="TouchTargetSizeCheck" />
+                app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
 
         <LinearLayout
@@ -66,9 +65,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/username" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/clinic"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
@@ -90,7 +89,7 @@
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:text="Educational Qualification:"
@@ -101,7 +100,7 @@
             <EditText
                 android:id="@+id/education"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
@@ -110,8 +109,7 @@
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
-                app:layout_constraintTop_toBottomOf="@+id/password"
-                tools:ignore="TouchTargetSizeCheck" />
+                app:layout_constraintTop_toBottomOf="@+id/password" />
         </LinearLayout>
 
         <LinearLayout
@@ -122,7 +120,7 @@
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:text="Years of experience:"
@@ -133,7 +131,7 @@
             <EditText
                 android:id="@+id/experience"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
@@ -154,7 +152,7 @@
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:text="Number of cases diagnosed:"
@@ -165,7 +163,7 @@
             <EditText
                 android:id="@+id/cases"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"

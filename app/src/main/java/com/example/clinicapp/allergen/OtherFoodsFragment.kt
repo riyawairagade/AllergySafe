@@ -41,6 +41,9 @@ class OtherFoodsFragment : Fragment() {
 //        var fruitsData = args.fruitsData
         val pname = args.name
         val phone = args.phone
+        allergenAdapter.pname = pname
+        allergenAdapter.phone = phone
+
         var inhalantsData = allergenAdapter.allergenList
 
         binding.floatingActionButton9.setOnClickListener{

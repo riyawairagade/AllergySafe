@@ -35,6 +35,8 @@ class VegetablesFragment : Fragment() {
         var inhalantsData = allergenAdapter.allergenList
         val pname = args.name
         val phone = args.phone
+        allergenAdapter.pname = pname
+        allergenAdapter.phone = phone
 
         binding.floatingActionButton8.setOnClickListener{
             var inhalantsDataString = inhalantsData.toString()

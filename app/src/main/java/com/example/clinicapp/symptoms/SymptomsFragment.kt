@@ -41,7 +41,7 @@ class SymptomsFragment : Fragment() {
         symptomsAdapter.name = name
         symptomsAdapter.phone = phone
 
-        val data = mutableListOf(Symptom("Running nose"), Symptom("Sneezing"), Symptom("Cough"), Symptom("Wheezing/Blocks"), Symptom("Headache"), Symptom("Itching"), Symptom("Swelling/Flushing"), Symptom("Red rashes"), Symptom("Family History"))
+        val data = mutableListOf(Symptom("RunningNose"), Symptom("Sneezing"), Symptom("Cough"), Symptom("WheezeBlocks"), Symptom("Headache"), Symptom("Itching"), Symptom("Swelling"), Symptom("RedRashes"), Symptom("FHistory"))
         symptomsAdapter.symptomsData = data
         binding.recyclerViewSymptoms.adapter = symptomsAdapter
 
@@ -51,10 +51,6 @@ class SymptomsFragment : Fragment() {
             data.add(Symptom(symptomsText))
             symptomsAdapter.symptomsData = data
             binding.recyclerViewSymptoms.adapter = symptomsAdapter
-        }
-
-        binding.imageButton2.setOnClickListener {
-            findNavController().navigate(R.id.action_symptomsFragment_to_reportFragment)
         }
 
         binding.imageButton.setOnClickListener {

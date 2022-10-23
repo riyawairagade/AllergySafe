@@ -32,6 +32,9 @@ class MeatFishFragment : Fragment() {
 
         val pname = args.name
         val phone = args.phone
+        allergenAdapter.pname = pname
+        allergenAdapter.phone = phone
+
         var fruitsData = allergenAdapter.allergenList
         binding.floatingActionButton7.setOnClickListener{
 

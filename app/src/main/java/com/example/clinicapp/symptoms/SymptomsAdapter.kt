@@ -49,9 +49,9 @@ class SymptomsAdapter : RecyclerView.Adapter<SymptomsAdapter.ViewHolder>() {
             symptom.text = symptoms.name
 
             val db = Firebase.firestore
-            val sym = mutableMapOf<String, Boolean>()
+            val sym = mutableMapOf<String, String>()
             symptom.setOnClickListener{
-                sym[symptom.text.toString()] = true
+                sym[symptom.text.toString()] = "yes"
                 symptom.setBackgroundColor(Color.parseColor("#8BC34A"))
 
                 db.collection("Patients").document(name).collection("Symptoms").document("Symptoms")
