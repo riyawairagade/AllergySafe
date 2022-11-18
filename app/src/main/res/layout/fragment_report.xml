@@ -105,7 +105,7 @@ tools:context=".ReportFragment">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        tools:text="25" />
+        tools:text="N: 0.1234,RO: 1.4849,O: 0.9374,UO: 0.1638,R: 0.0344,RU: 0.1230,U: 1.2356" />
 
     <!-- Card view for displaying the -->
     <!-- Pie chart and details of pie chart -->

@@ -60,7 +60,7 @@ tools:context=".LoginFragment">
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/create"
+        android:id="@+id/login"
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="162dp"
         android:layout_height="wrap_content"

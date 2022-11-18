@@ -1,6 +1,7 @@
 package com.example.clinicapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.clinicapp.databinding.FragmentProfileBinding
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -33,21 +36,47 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val db = Firebase.firestore
+
         binding.create.setOnClickListener {
             var text = ""
             val duration = Toast.LENGTH_SHORT
-            val yrs = binding.experience.text.toString().toInt()
+            val yrs = binding.experience.text.toString()
+            val name = binding.username.text.toString()
+            val clinic = binding.clinic.text.toString()
+            val edu = binding.education.text.toString()
+            val cases = binding.cases.text.toString()
+            var type : String = ""
+
             when {
-                yrs == 0 -> {
+                yrs.toInt() == 0 -> {
                     text = "You are a Technician"
+                    type = "Technician"
+                    binding.pword.text = "tech"
                 }
-                yrs in 1..9 -> {
+                yrs.toInt() in 1..9 -> {
                     text = "You are a Doctor"
+                    type = "Doctor"
+                    binding.pword.text = "doc"
                 }
-                yrs >= 10 -> {
+                yrs.toInt() >= 10 -> {
                     text = "You are an Expert"
+                    type = "Expert"
+                    binding.pword.text = "exp"
                 }
             }
+
+            val user = hashMapOf("Name" to name, "Clinic" to clinic,"Education" to edu,"Years" to yrs,"Cases" to cases, "Type" to type)
+            db.collection("Users").add(user)
+                .addOnSuccessListener { documentReference ->
+                    Log.d(javaClass.simpleName, "DocumentSnapshot written with ID: ${documentReference.id}")
+                    binding.uname.text = documentReference.id
+                }
+                .addOnFailureListener { e ->
+                    Log.w(javaClass.simpleName, "Error adding document", e)
+                }
+
+
             val toast = Toast.makeText(this.context, text, duration)
             toast.show()
         }
