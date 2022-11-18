@@ -132,51 +132,51 @@ class ReportFragment : Fragment() {
                     var outputList = listOf("N: $n","RO: $ro","O: $o","UO: $uo","R: $r","RU: $ru","U: $u")
                     binding.textView33.text = outputList.toString()
 
-                    var pieChart = PieChart(context)
-                    pieChart.addPieSlice(
+//                    var pieChart = PieChart(context)
+                    binding.piechart.addPieSlice(
                         PieModel(
                             "N", n,
                             Color.parseColor("#E91E63")
                         )
                     )
-                    pieChart.addPieSlice(
+                    binding.piechart.addPieSlice(
                         PieModel(
                             "RO", ro,
                             Color.parseColor("#9C27B0")
                         )
                     )
-                    pieChart.addPieSlice(
+                    binding.piechart.addPieSlice(
                         PieModel(
                             "O", o,
                             Color.parseColor("#3F51B5")
                         )
                     )
-                    pieChart.addPieSlice(
+                    binding.piechart.addPieSlice(
                         PieModel(
                             "UO", uo,
                             Color.parseColor("#03A9F4")
                         )
                     )
-                    pieChart.addPieSlice(
+                    binding.piechart.addPieSlice(
                         PieModel(
                             "R", r,
                             Color.parseColor("#4CAF50")
                         )
                     )
-                    pieChart.addPieSlice(
+                    binding.piechart.addPieSlice(
                         PieModel(
                             "RU", ru,
                             Color.parseColor("#FFEB3B")
                         )
                     )
-                    pieChart.addPieSlice(
+                    binding.piechart.addPieSlice(
                         PieModel(
                             "U", u,
                             Color.parseColor("#FF9800")
                         )
                     )
                     // To animate the pie chart
-//                    pieChart.startAnimation();
+                    binding.piechart.startAnimation()
 
                 } else {
                     Log.w(javaClass.simpleName, "No such document")
