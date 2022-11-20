@@ -19,98 +19,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="Rhinitis"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        android:textStyle="bold"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.271"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="69dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="56dp"
-        app:srcCompat="@drawable/eye"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView23"
         app:layout_constraintTop_toBottomOf="@+id/textView22"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="248dp"
-        android:layout_height="142dp"
-        android:layout_marginTop="28dp"
-        android:text="1. Pepper \n 2. Maida \n 3. Banana"
-        android:textColor="#000000"
-        android:textSize="29sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Urticaria"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.287"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView24" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="69dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="40dp"
-        app:srcCompat="@drawable/closed_eye"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.017"
-        app:layout_constraintStart_toEndOf="@+id/textView25"
-        app:layout_constraintTop_toBottomOf="@+id/textView24"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Others"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.258"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="69dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="44dp"
-        app:srcCompat="@drawable/closed_eye"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView26"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+        tools:listitem="@layout/item_row_view_knowledge"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

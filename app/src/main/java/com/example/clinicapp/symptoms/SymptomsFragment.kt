@@ -1,6 +1,5 @@
 package com.example.clinicapp.symptoms
 
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,11 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.clinicapp.R
-import com.example.clinicapp.allergen.InhalantsFragmentArgs
 import com.example.clinicapp.databinding.FragmentSymptomsBinding
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
@@ -26,6 +24,11 @@ class SymptomsFragment : Fragment() {
     private lateinit var binding: FragmentSymptomsBinding
     private val symptomsAdapter = SymptomsAdapter()
     private val args : SymptomsFragmentArgs by navArgs()
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Patient Signs and Symptoms"
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSymptomsBinding.inflate(inflater)
@@ -46,14 +49,14 @@ class SymptomsFragment : Fragment() {
         binding.recyclerViewSymptoms.adapter = symptomsAdapter
 
         binding.floatingActionButton.setOnClickListener{
-            val symptomsText = binding.others.text.toString()
+            val symptomsText = binding.others.editText?.text.toString()
 
             data.add(Symptom(symptomsText))
             symptomsAdapter.symptomsData = data
             binding.recyclerViewSymptoms.adapter = symptomsAdapter
         }
 
-        binding.imageButton.setOnClickListener {
+        binding.floatingActionButton10.setOnClickListener {
             val test = hashMapOf("Test recommended" to true)
             val db = Firebase.firestore
             val text = "Test recommended"
@@ -68,6 +71,18 @@ class SymptomsFragment : Fragment() {
                 .addOnFailureListener { e ->
                     Log.w(javaClass.simpleName, "Error adding document", e)
                 }
+        }
+
+        binding.home.setOnClickListener{
+            findNavController().navigate(SymptomsFragmentDirections.actionSymptomsFragmentToDoctorFragment())
+        }
+
+        binding.existingp.setOnClickListener{
+            findNavController().navigate(SymptomsFragmentDirections.actionSymptomsFragmentToDoctorPatientsListFragment())
+        }
+
+        binding.newp.setOnClickListener{
+            findNavController().navigate(SymptomsFragmentDirections.actionSymptomsFragmentToDetailsFragment())
         }
     }
 }

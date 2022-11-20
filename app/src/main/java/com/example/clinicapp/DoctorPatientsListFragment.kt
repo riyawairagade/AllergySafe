@@ -6,11 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
-import com.example.clinicapp.databinding.FragmentDoctorBinding
 import com.example.clinicapp.databinding.FragmentDoctorPatientsListBinding
 import com.example.clinicapp.technician.Patient
-import com.example.clinicapp.technician.PatientAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -22,6 +21,11 @@ class DoctorPatientsListFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Existing Patients"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +53,14 @@ class DoctorPatientsListFragment : Fragment() {
                 doctorPatientsListAdapter.patientsData = data
             }
         binding.recyclerView.adapter = doctorPatientsListAdapter
+
+        binding.home.setOnClickListener{
+            findNavController().navigate(DoctorPatientsListFragmentDirections.actionDoctorPatientsListFragmentToDoctorFragment())
+        }
+
+        binding.newp.setOnClickListener{
+            findNavController().navigate(DoctorPatientsListFragmentDirections.actionDoctorPatientsListFragmentToDetailsFragment())
+        }
     }
 
     override fun onDestroyView() {

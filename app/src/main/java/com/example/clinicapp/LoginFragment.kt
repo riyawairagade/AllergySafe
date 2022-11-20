@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.example.clinicapp.databinding.FragmentLoginBinding
 import com.google.firebase.firestore.ktx.firestore
@@ -22,6 +23,11 @@ class LoginFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Login"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,18 +53,18 @@ class LoginFragment : Fragment() {
 
         binding.login.setOnClickListener {
 
-            val docRef = db.collection("Users").document(binding.username.text.toString())
+            val docRef = db.collection("Users").document(binding.username.editText?.text.toString())
             docRef.get()
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         Log.d(javaClass.simpleName, "DocumentSnapshot data: ${document.data}")
-                        if(document.data?.get("Years").toString().toInt() == 0 && binding.password.text.toString() == techPass){
+                        if(document.data?.get("Years").toString().toInt() == 0 && binding.password.editText?.text.toString() == techPass){
                             findNavController().navigate(R.id.action_loginFragment_to_patientsListFragment)
                         }
-                        else if(document.data?.get("Years").toString().toInt() in 1..9 && binding.password.text.toString() == docPass){
+                        else if(document.data?.get("Years").toString().toInt() in 1..9 && binding.password.editText?.text.toString() == docPass){
                             findNavController().navigate(R.id.action_loginFragment_to_doctorFragment)
                         }
-                        else if(document.data?.get("Years").toString().toInt() >= 10 && binding.password.text.toString() == expPass){
+                        else if(document.data?.get("Years").toString().toInt() >= 10 && binding.password.editText?.text.toString() == expPass){
                             findNavController().navigate(R.id.action_loginFragment_to_expertFragment)
                         }
                         else{
@@ -73,20 +79,6 @@ class LoginFragment : Fragment() {
                 .addOnFailureListener { exception ->
                     Log.d(javaClass.simpleName, "get failed with ", exception)
                 }
-
-
-//            if(binding.username.text.toString() == techUser && binding.password.text.toString() == techPass){
-//                findNavController().navigate(R.id.action_loginFragment_to_patientsListFragment)
-//            }
-//            else if(binding.username.text.toString() == docUser && binding.password.text.toString() == docPass){
-//                findNavController().navigate(R.id.action_loginFragment_to_doctorFragment)
-//            }
-//            else if(binding.username.text.toString() == expUser && binding.password.text.toString() == expPass){
-//                findNavController().navigate(R.id.action_loginFragment_to_expertFragment)
-//            }
-//            else{
-//                Toast.makeText(activity,"Username or Password is incorrect", Toast.LENGTH_LONG).show()
-//            }
         }
     }
 

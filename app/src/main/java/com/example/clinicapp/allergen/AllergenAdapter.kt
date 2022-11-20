@@ -93,7 +93,7 @@ class AllergenAdapter : RecyclerView.Adapter<AllergenAdapter.ViewHolder>(){
             r1.setOnClickListener{
                 a.setTextColor(Color.parseColor("#FFFF00"))
                 allergenList.put(allergen.name, allergen.r1)
-                val data = hashMapOf(allergen.name to "r1")
+                val data = hashMapOf(allergen.name to "lr")
 
                 db.collection("Patients").document(pname).collection("Symptoms").document("Allergens")
                     .set(data, SetOptions.merge())
@@ -117,7 +117,7 @@ class AllergenAdapter : RecyclerView.Adapter<AllergenAdapter.ViewHolder>(){
             r2.setOnClickListener{
                 a.setTextColor(Color.parseColor("#FF9800"))
                 allergenList.put(allergen.name, allergen.r2)
-                val data = hashMapOf(allergen.name to "r2")
+                val data = hashMapOf(allergen.name to "mr")
 
                 db.collection("Patients").document(pname).collection("Symptoms").document("Allergens")
                     .set(data, SetOptions.merge())
@@ -141,7 +141,7 @@ class AllergenAdapter : RecyclerView.Adapter<AllergenAdapter.ViewHolder>(){
             r3.setOnClickListener{
                 a.setTextColor(Color.parseColor("#FF0000"))
                 allergenList.put(allergen.name, allergen.r3)
-                val data = hashMapOf(allergen.name to "r3")
+                val data = hashMapOf(allergen.name to "hr")
 
                 db.collection("Patients").document(pname).collection("Symptoms").document("Allergens")
                     .set(data, SetOptions.merge())

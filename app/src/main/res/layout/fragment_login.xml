@@ -8,8 +8,8 @@ tools:context=".LoginFragment">
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="99dp"
-        android:layout_height="38dp"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="100dp"
         android:text="Username:"
@@ -19,21 +19,21 @@ tools:context=".LoginFragment">
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="102dp"
-        android:layout_height="47dp"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="45dp"
         android:text="Password:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username"
-        android:layout_width="wrap_content"
+        android:layout_width="195dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="Username"
@@ -41,12 +41,18 @@ tools:context=".LoginFragment">
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
-        android:layout_width="wrap_content"
+        android:layout_width="195dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
@@ -56,14 +62,21 @@ tools:context=".LoginFragment">
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        android:inputType="textPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/username">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/login"
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="162dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:text="Login"

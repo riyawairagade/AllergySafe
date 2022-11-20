@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.clinicapp.R
 import com.example.clinicapp.databinding.ItemRowPatientBinding
 
 class PatientAdapter : RecyclerView.Adapter<PatientAdapter.ViewHolder>() {
@@ -28,11 +27,10 @@ class PatientAdapter : RecyclerView.Adapter<PatientAdapter.ViewHolder>() {
         val patients = patientsData[position]
 
         with(holder.binding) {
-            patientText.text = patients.pname
-        }
-
-        holder.binding.yesimageButton.setOnClickListener{
-            findNavController(holder.itemView).navigate(PatientsListFragmentDirections.actionPatientsListFragmentToOptionsFragment(patients.pname, patients.phone))
+            patientButton.text = patients.pname
+            patientButton.setOnClickListener{
+                findNavController(holder.itemView).navigate(PatientsListFragmentDirections.actionPatientsListFragmentToOptionsFragment(patients.pname, patients.phone))
+            }
         }
     }
 

@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@id/textView17"
         tools:listitem="@layout/item_row_symptoms"/>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/others"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -43,13 +43,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recyclerViewSymptoms" />
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewSymptoms" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:clickable="true"
         android:src="@drawable/outline_add_24"
@@ -59,30 +66,74 @@
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewSymptoms"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="77dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="16dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/outline_science_24"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/others"
-        app:srcCompat="@drawable/beaker"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/others" />
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/imageButton2"-->
-<!--        android:layout_width="82dp"-->
-<!--        android:layout_height="75dp"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        android:layout_marginEnd="96dp"-->
-<!--        android:layout_marginBottom="16dp"-->
-<!--        app:srcCompat="@drawable/question"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/others"-->
-<!--        tools:ignore="SpeakableTextPresentCheck" />-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewGraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/newp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="28dp"
+                android:layout_weight="1"
+                android:src="@drawable/outline_add_24"
+                android:clickable="true"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="28dp"
+                android:layout_weight="1"
+                android:src="@drawable/round_home_24"
+                android:clickable="true"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/existingp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="28dp"
+                android:layout_weight="1"
+                android:src="@drawable/outline_description_24"
+                android:clickable="true"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

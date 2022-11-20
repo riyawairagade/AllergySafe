@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
@@ -23,6 +24,11 @@ class FruitsFragment : Fragment() {
     private lateinit var binding: FragmentFruitsBinding
     private val allergenAdapter = AllergenAdapter()
     private val args : FruitsFragmentArgs by navArgs()
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Fruits"
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentFruitsBinding.inflate(inflater)

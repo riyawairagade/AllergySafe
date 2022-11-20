@@ -28,11 +28,10 @@ class DoctorPatientsListAdapter : RecyclerView.Adapter<DoctorPatientsListAdapter
         val patients = patientsData[position]
 
         with(holder.binding) {
-            patientText.text = patients.pname
-        }
-
-        holder.binding.yesimageButton.setOnClickListener{
-            Navigation.findNavController(holder.itemView).navigate(DoctorPatientsListFragmentDirections.actionDoctorPatientsListFragmentToReportFragment(patients.pname, patients.phone))
+            patientButton.text = patients.pname
+            patientButton.setOnClickListener{
+                Navigation.findNavController(holder.itemView).navigate(DoctorPatientsListFragmentDirections.actionDoctorPatientsListFragmentToReportFragment(patients.pname, patients.phone))
+            }
         }
     }
 

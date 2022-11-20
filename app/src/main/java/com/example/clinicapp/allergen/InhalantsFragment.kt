@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +22,11 @@ class InhalantsFragment : Fragment() {
     private lateinit var binding: FragmentInhalantsBinding
     private val allergenAdapter = AllergenAdapter()
     private val args : InhalantsFragmentArgs by navArgs()
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Inhalants"
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentInhalantsBinding.inflate(inflater)

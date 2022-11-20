@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.example.clinicapp.databinding.FragmentProfileBinding
 import com.google.firebase.firestore.ktx.firestore
@@ -22,6 +23,11 @@ class ProfileFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Register"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,11 +47,11 @@ class ProfileFragment : Fragment() {
         binding.create.setOnClickListener {
             var text = ""
             val duration = Toast.LENGTH_SHORT
-            val yrs = binding.experience.text.toString()
-            val name = binding.username.text.toString()
-            val clinic = binding.clinic.text.toString()
-            val edu = binding.education.text.toString()
-            val cases = binding.cases.text.toString()
+            val yrs = binding.experience.editText?.text.toString()
+            val name = binding.username.editText?.text.toString()
+            val clinic = binding.clinic.editText?.text.toString()
+            val edu = binding.education.editText?.text.toString()
+            val cases = binding.cases.editText?.text.toString()
             var type : String = ""
 
             when {

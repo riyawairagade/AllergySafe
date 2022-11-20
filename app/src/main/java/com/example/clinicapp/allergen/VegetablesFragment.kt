@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +19,11 @@ class VegetablesFragment : Fragment() {
     private val allergenAdapter = AllergenAdapter()
     private val args : VegetablesFragmentArgs by navArgs()
 
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Vegetables"
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentVegetablesBinding.inflate(inflater)
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
@@ -27,7 +33,7 @@ class VegetablesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val data = mutableListOf(Allergen("Ginger", "NR", "LR", "MR", "HR"), Allergen("Brinjal", "NR", "R1", "R2", "R3"), Allergen("Gram", "NR", "R1", "R2", "R3"), Allergen("Greens", "NR", "R1", "R2", "R3"), Allergen("Kovaikai", "NR", "R1", "R2", "R3"), Allergen("Tomato", "NR", "R1", "R2", "R3"), Allergen("Dhal", "NR", "R1", "R2", "R3"), Allergen("Drumstick", "NR", "R1", "R2", "R3"))
+        val data = mutableListOf(Allergen("Ginger", "NR", "LR", "MR", "HR"), Allergen("Brinjal", "NR", "LR", "MR", "HR"), Allergen("Gram", "NR", "LR", "MR", "HR"), Allergen("Greens", "NR", "LR", "MR", "HR"), Allergen("Kovaikai", "NR", "LR", "MR", "HR"), Allergen("Tomato", "NR", "LR", "MR", "HR"), Allergen("Dhal", "NR", "LR", "MR", "HR"), Allergen("Drumstick", "NR", "LR", "MR", "HR"))
         allergenAdapter.data = data
         binding.recyclerView.adapter = allergenAdapter
 

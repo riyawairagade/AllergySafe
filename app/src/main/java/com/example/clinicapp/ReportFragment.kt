@@ -8,12 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.clinicapp.databinding.FragmentReportBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 import java.io.InputStream
 
@@ -26,6 +27,11 @@ class ReportFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Patient Report"
+    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -74,7 +80,6 @@ class ReportFragment : Fragment() {
             .addOnSuccessListener { document ->
                 if (document != null) {
                     Log.w(javaClass.simpleName, "DocumentSnapshot data: ${document.data}")
-                    println()
                     document.data?.forEach{ entry ->
                         testData[entry.key.toString()] = entry.value.toString()
                     }
@@ -101,6 +106,7 @@ class ReportFragment : Fragment() {
                         val a : String = entry.key.plus(" ").plus(entry.value).lowercase()
                         items.add(a)
                     }
+
                     var displayData : String = ""
                     var n : Float = 0.0F
                     var ro : Float = 0.0F
@@ -192,7 +198,16 @@ class ReportFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.home.setOnClickListener{
+            findNavController().navigate(ReportFragmentDirections.actionReportFragmentToDoctorFragment())
+        }
 
+        binding.existingp.setOnClickListener{
+            findNavController().navigate(ReportFragmentDirections.actionReportFragmentToDoctorPatientsListFragment())
+        }
+        binding.newp.setOnClickListener{
+            findNavController().navigate(ReportFragmentDirections.actionReportFragmentToDetailsFragment())
+        }
     }
 
     override fun onDestroyView() {
