@@ -10,9 +10,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.clinicapp.databinding.FragmentHomeBinding
 
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null

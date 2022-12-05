@@ -1,7 +1,6 @@
 package com.example.clinicapp.symptoms
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,9 +15,6 @@ import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class SymptomsFragment : Fragment() {
 
     private lateinit var binding: FragmentSymptomsBinding
@@ -64,12 +60,8 @@ class SymptomsFragment : Fragment() {
             db.collection("Patients").document(name)
                 .set(test, SetOptions.merge())
                 .addOnSuccessListener {
-                    Log.d(javaClass.simpleName, "DocumentSnapshot")
                     val toast = Toast.makeText(this.context, text, Toast.LENGTH_LONG)
                     toast.show()
-                }
-                .addOnFailureListener { e ->
-                    Log.w(javaClass.simpleName, "Error adding document", e)
                 }
         }
 

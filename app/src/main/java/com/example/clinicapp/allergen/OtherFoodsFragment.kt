@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.clinicapp.allergen.Allergen
-import com.example.clinicapp.allergen.AllergenAdapter
 import com.example.clinicapp.databinding.FragmentOtherFoodsBinding
 
 
@@ -44,18 +42,12 @@ class OtherFoodsFragment : Fragment() {
             binding.recyclerView.adapter = allergenAdapter
         }
 
-//        var fruitsData = args.fruitsData
         val pname = args.name
         val phone = args.phone
         allergenAdapter.pname = pname
         allergenAdapter.phone = phone
 
-        var inhalantsData = allergenAdapter.allergenList
-
         binding.floatingActionButton9.setOnClickListener{
-            var inhalantsDataString = inhalantsData.toString()
-            inhalantsDataString = inhalantsDataString.substring(1, inhalantsDataString.length -1)
-//            fruitsData = fruitsData.plus(", ").plus(inhalantsDataString)
             val action = OtherFoodsFragmentDirections.actionOtherFoodsFragmentToOptionsFragment(pname, phone)
             view.findNavController().navigate(action)
         }

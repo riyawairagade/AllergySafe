@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.clinicapp.OptionsFragmentArgs
 import com.example.clinicapp.databinding.FragmentMeatFishBinding
 
 
@@ -41,9 +40,7 @@ class MeatFishFragment : Fragment() {
         allergenAdapter.pname = pname
         allergenAdapter.phone = phone
 
-        var fruitsData = allergenAdapter.allergenList
         binding.floatingActionButton7.setOnClickListener{
-
             val action = MeatFishFragmentDirections.actionMeatFragmentToOptionsFragment(pname, phone)
             view.findNavController().navigate(action)
         }

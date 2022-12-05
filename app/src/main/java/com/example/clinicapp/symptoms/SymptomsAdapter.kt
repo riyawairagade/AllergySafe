@@ -1,13 +1,9 @@
 package com.example.clinicapp.symptoms
 
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.clinicapp.DetailsFragmentDirections
 import com.example.clinicapp.databinding.ItemRowSymptomsBinding
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
@@ -57,11 +53,7 @@ class SymptomsAdapter : RecyclerView.Adapter<SymptomsAdapter.ViewHolder>() {
                 db.collection("Patients").document(name).collection("Symptoms").document("Symptoms")
                     .set(sym as Map<String, Any>, SetOptions.merge())
                     .addOnSuccessListener {
-                        Log.d(javaClass.simpleName, "DocumentSnapshot")
                         symptom.setBackgroundColor(Color.parseColor("#8BC34A"))
-                    }
-                    .addOnFailureListener { e ->
-                        Log.w(javaClass.simpleName, "Error adding document", e)
                     }
             }
         }

@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.clinicapp.databinding.FragmentExpertBinding
 
 
 class ExpertFragment : Fragment() {
 
     private var _binding: FragmentExpertBinding? = null
+    private val args : ExpertFragmentArgs by navArgs()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -37,11 +39,11 @@ class ExpertFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.button.setOnClickListener {
-            findNavController().navigate(R.id.action_expertFragment_to_viewKnowledgeFragment)
+            findNavController().navigate(ExpertFragmentDirections.actionExpertFragmentToViewKnowledgeFragment())
         }
 
         binding.button2.setOnClickListener {
-            findNavController().navigate(R.id.action_expertFragment_to_updatePreferenceFragment)
+            findNavController().navigate(ExpertFragmentDirections.actionExpertFragmentToUpdatePreferenceFragment(args.name))
         }
     }
 

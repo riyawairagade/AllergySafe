@@ -1,7 +1,6 @@
 package com.example.clinicapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +12,6 @@ import com.example.clinicapp.databinding.FragmentProfileBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
@@ -75,14 +71,8 @@ class ProfileFragment : Fragment() {
             val user = hashMapOf("Name" to name, "Clinic" to clinic,"Education" to edu,"Years" to yrs,"Cases" to cases, "Type" to type)
             db.collection("Users").add(user)
                 .addOnSuccessListener { documentReference ->
-                    Log.d(javaClass.simpleName, "DocumentSnapshot written with ID: ${documentReference.id}")
                     binding.uname.text = documentReference.id
                 }
-                .addOnFailureListener { e ->
-                    Log.w(javaClass.simpleName, "Error adding document", e)
-                }
-
-
             val toast = Toast.makeText(this.context, text, duration)
             toast.show()
         }

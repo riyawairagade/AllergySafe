@@ -13,7 +13,7 @@ class ViewKnowledgeAdapter : RecyclerView.Adapter<ViewKnowledgeAdapter.ViewHolde
             notifyDataSetChanged()
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewKnowledgeAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ItemRowViewKnowledgeBinding.inflate(
                 LayoutInflater.from(parent.context),

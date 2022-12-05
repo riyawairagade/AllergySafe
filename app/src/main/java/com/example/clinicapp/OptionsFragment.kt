@@ -9,12 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.clinicapp.allergen.FruitsFragmentDirections
 import com.example.clinicapp.databinding.FragmentOptionsBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class OptionsFragment : Fragment() {
 
     private var _binding: FragmentOptionsBinding? = null
@@ -66,7 +62,6 @@ class OptionsFragment : Fragment() {
         }
 
         binding.nextPatient.setOnClickListener {
-//            val fruitsData = args.fruitsData
             val action = OptionsFragmentDirections.actionOptionsFragmentToPatientsListFragment()
             view.findNavController().navigate(action)
         }

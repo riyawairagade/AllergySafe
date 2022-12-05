@@ -3,7 +3,6 @@ package com.example.clinicapp
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,7 +40,6 @@ class ReportFragment : Fragment() {
         _binding = FragmentReportBinding.inflate(inflater, container, false)
 
         val name = args.name
-        val phone = args.phone
         val db = Firebase.firestore
         val testData : HashMap<String, String> = hashMapOf()
 
@@ -49,7 +47,6 @@ class ReportFragment : Fragment() {
             .get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    Log.w(javaClass.simpleName, "DocumentSnapshot data: ${document.data}")
                     if(document.data?.get("Test recommended") == true){
                         binding.textView30.text = "True"
                         binding.textView20.visibility = View.VISIBLE
@@ -66,29 +63,17 @@ class ReportFragment : Fragment() {
                         binding.textView32.visibility = View.VISIBLE
                         binding.textView32.text = "Under Process"
                     }
-                } else {
-                    Log.w(javaClass.simpleName, "No such document")
                 }
             }
-            .addOnFailureListener { exception ->
-                Log.w(javaClass.simpleName, "Listen failed.", exception)
-            }
-
 
         val docRef = db.collection("Patients").document(name).collection("Symptoms").document("Allergens")
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    Log.w(javaClass.simpleName, "DocumentSnapshot data: ${document.data}")
                     document.data?.forEach{ entry ->
                         testData[entry.key.toString()] = entry.value.toString()
                     }
-                } else {
-                    Log.w(javaClass.simpleName, "No such document")
                 }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(javaClass.simpleName, "Listen failed.", exception)
             }
 
         val items : MutableList<String> = mutableListOf()
@@ -97,7 +82,6 @@ class ReportFragment : Fragment() {
         docRef2.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    Log.w(javaClass.simpleName, "DocumentSnapshot data: ${document.data}")
                     document.data?.forEach{ entry ->
                         testData[entry.key.toString()] = entry.value.toString()
                     }
@@ -107,14 +91,14 @@ class ReportFragment : Fragment() {
                         items.add(a)
                     }
 
-                    var displayData : String = ""
-                    var n : Float = 0.0F
-                    var ro : Float = 0.0F
-                    var o : Float = 0.0F
-                    var uo : Float = 0.0F
-                    var r : Float = 0.0F
-                    var ru : Float = 0.0F
-                    var u : Float = 0.0F
+                    var displayData = ""
+                    var n = 0.0F
+                    var ro = 0.0F
+                    var o = 0.0F
+                    var uo = 0.0F
+                    var r = 0.0F
+                    var ru = 0.0F
+                    var u = 0.0F
                     items.forEach { entry ->
                         val myInputStream : InputStream = resources.openRawResource(R.raw.allergydata)
                         val bufferedReader = myInputStream.bufferedReader()
@@ -135,10 +119,9 @@ class ReportFragment : Fragment() {
                         }
                     }
 
-                    var outputList = listOf("N: $n","RO: $ro","O: $o","UO: $uo","R: $r","RU: $ru","U: $u")
+                    val outputList = listOf("N: $n","RO: $ro","O: $o","UO: $uo","R: $r","RU: $ru","U: $u")
                     binding.textView33.text = outputList.toString()
 
-//                    var pieChart = PieChart(context)
                     binding.piechart.addPieSlice(
                         PieModel(
                             "N", n,
@@ -181,15 +164,9 @@ class ReportFragment : Fragment() {
                             Color.parseColor("#FF9800")
                         )
                     )
-                    // To animate the pie chart
                     binding.piechart.startAnimation()
 
-                } else {
-                    Log.w(javaClass.simpleName, "No such document")
                 }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(javaClass.simpleName, "Listen failed.", exception)
             }
 
         return binding.root

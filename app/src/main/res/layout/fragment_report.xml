@@ -57,18 +57,6 @@ tools:context=".ReportFragment">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:layout_marginEnd="24dp"-->
-<!--        app:srcCompat="@drawable/graph"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView20" />-->
-
     <TextView
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
@@ -107,8 +95,6 @@ tools:context=".ReportFragment">
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:text="N: 0.1234,RO: 1.4849,O: 0.9374,UO: 0.1638,R: 0.0344,RU: 0.1230,U: 1.2356" />
 
-    <!-- Card view for displaying the -->
-    <!-- Pie chart and details of pie chart -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewGraph"
         android:layout_width="match_parent"
@@ -122,20 +108,12 @@ tools:context=".ReportFragment">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView33">
 
-
-        <!--Linear layout to display pie chart -->
-        <!-- and details of pie chart-->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <!--Pie chart to display the data-->
-
-            <!--Creating another linear layout -->
-            <!-- to display pie chart details -->
             <org.eazegraph.lib.charts.PieChart
                 android:id="@+id/piechart"
                 android:layout_width="0dp"
@@ -144,9 +122,7 @@ tools:context=".ReportFragment">
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:layout_weight="1"
-                android:padding="6dp"
-
-                />
+                android:padding="6dp" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -154,21 +130,18 @@ tools:context=".ReportFragment">
                 android:layout_weight="1"
                 android:layout_marginLeft="20dp"
                 android:orientation="vertical"
-                android:gravity="center_vertical"
-                >
+                android:gravity="center_vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="15dp"
                     android:layout_gravity="center_vertical">
 
-                    <!--View to display the yellow color icon-->
                     <View
                         android:layout_width="15dp"
                         android:layout_height="match_parent"
                         android:background="#E91E63" />
 
-                    <!--Text view to display R -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -177,20 +150,17 @@ tools:context=".ReportFragment">
 
                 </LinearLayout>
 
-                <!--Linear layout to display Python-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="15dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="5dp">
 
-                    <!--View to display the green color icon-->
                     <View
                         android:layout_width="15dp"
                         android:layout_height="match_parent"
                         android:background="#9C27B0" />
 
-                    <!--Text view to display python text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -199,20 +169,17 @@ tools:context=".ReportFragment">
 
                 </LinearLayout>
 
-                <!--Linear layout to display C++-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="15dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="5dp">
 
-                    <!--View to display the red color icon-->
                     <View
                         android:layout_width="15dp"
                         android:layout_height="match_parent"
                         android:background="#3F51B5" />
 
-                    <!--Text view to display C++ text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -221,20 +188,17 @@ tools:context=".ReportFragment">
 
                 </LinearLayout>
 
-                <!--Linear layout to display Java-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="15dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="5dp">
 
-                    <!--View to display the blue color icon-->
                     <View
                         android:layout_width="15dp"
                         android:layout_height="match_parent"
                         android:background="#03A9F4" />
 
-                    <!--Text view to display Java text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -269,13 +233,11 @@ tools:context=".ReportFragment">
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="5dp">
 
-                    <!--View to display the blue color icon-->
                     <View
                         android:layout_width="15dp"
                         android:layout_height="match_parent"
                         android:background="#FFEB3B" />
 
-                    <!--Text view to display Java text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -290,13 +252,11 @@ tools:context=".ReportFragment">
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="5dp">
 
-                    <!--View to display the blue color icon-->
                     <View
                         android:layout_width="15dp"
                         android:layout_height="match_parent"
                         android:background="#FF9800" />
 
-                    <!--Text view to display Java text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

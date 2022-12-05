@@ -1,7 +1,6 @@
 package com.example.clinicapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +12,6 @@ import com.example.clinicapp.databinding.FragmentLoginBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
@@ -42,11 +38,8 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val techUser = "technician"
         val techPass = "tech"
-        val docUser = "doctor"
         val docPass = "doc"
-        val expUser = "expert"
         val expPass = "exp"
 
         val db = Firebase.firestore
@@ -57,7 +50,6 @@ class LoginFragment : Fragment() {
             docRef.get()
                 .addOnSuccessListener { document ->
                     if (document != null) {
-                        Log.d(javaClass.simpleName, "DocumentSnapshot data: ${document.data}")
                         if(document.data?.get("Years").toString().toInt() == 0 && binding.password.editText?.text.toString() == techPass){
                             findNavController().navigate(R.id.action_loginFragment_to_patientsListFragment)
                         }
@@ -65,19 +57,15 @@ class LoginFragment : Fragment() {
                             findNavController().navigate(R.id.action_loginFragment_to_doctorFragment)
                         }
                         else if(document.data?.get("Years").toString().toInt() >= 10 && binding.password.editText?.text.toString() == expPass){
-                            findNavController().navigate(R.id.action_loginFragment_to_expertFragment)
+                            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToExpertFragment(binding.username.editText?.text.toString()))
                         }
                         else{
                             Toast.makeText(activity,"Incorrect Password", Toast.LENGTH_LONG).show()
                         }
                     } else {
-                        Log.d(javaClass.simpleName, "No such document")
                         val toast = Toast.makeText(this.context, "Incorrect Username", Toast.LENGTH_SHORT)
                         toast.show()
                     }
-                }
-                .addOnFailureListener { exception ->
-                    Log.d(javaClass.simpleName, "get failed with ", exception)
                 }
         }
     }

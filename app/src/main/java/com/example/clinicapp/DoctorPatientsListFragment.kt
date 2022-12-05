@@ -1,7 +1,6 @@
 package com.example.clinicapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -43,7 +42,6 @@ class DoctorPatientsListFragment : Fragment() {
         db.collection("Patients")
             .addSnapshotListener { value, e ->
                 if (e != null) {
-                    Log.w(javaClass.simpleName, "Listen failed.", e)
                     return@addSnapshotListener
                 }
                 val data = mutableListOf<Patient>()

@@ -9,14 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.clinicapp.OptionsFragmentArgs
-import com.example.clinicapp.allergen.Allergen
-import com.example.clinicapp.allergen.AllergenAdapter
 import com.example.clinicapp.databinding.FragmentInhalantsBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class InhalantsFragment : Fragment() {
 
     private lateinit var binding: FragmentInhalantsBinding
@@ -41,19 +35,12 @@ class InhalantsFragment : Fragment() {
         allergenAdapter.data = data
         binding.recyclerView.adapter = allergenAdapter
 
-//        var fruitsData = args.fruitsData
         val pname = args.name
         val phone = args.phone
         allergenAdapter.pname = pname
         allergenAdapter.phone = phone
 
-//        fruitsData = fruitsData.substring(1, fruitsData.length -1)
-        var inhalantsData = allergenAdapter.allergenList
-
         binding.floatingActionButton6.setOnClickListener{
-            var inhalantsDataString = inhalantsData.toString()
-            inhalantsDataString = inhalantsDataString.substring(1, inhalantsDataString.length -1)
-//            fruitsData = fruitsData.plus(", ").plus(inhalantsDataString)
             val action = InhalantsFragmentDirections.actionInhalantsFragmentToOptionsFragment(pname, phone)
             view.findNavController().navigate(action)
         }

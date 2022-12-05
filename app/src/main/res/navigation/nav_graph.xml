@@ -228,6 +228,9 @@
         android:name="com.example.clinicapp.ExpertFragment"
         android:label="fragment_expert"
         tools:layout="@layout/fragment_expert" >
+        <argument
+            android:name="name"
+            app:argType="string" />
         <action
             android:id="@+id/action_expertFragment_to_viewKnowledgeFragment"
             app:destination="@id/viewKnowledgeFragment" />
@@ -244,7 +247,11 @@
         android:id="@+id/updatePreferenceFragment"
         android:name="com.example.clinicapp.UpdatePreferenceFragment"
         android:label="fragment_update_preference"
-        tools:layout="@layout/fragment_update_preference" />
+        tools:layout="@layout/fragment_update_preference" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/doctorFragment"
         android:name="com.example.clinicapp.DoctorFragment"

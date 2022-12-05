@@ -1,15 +1,11 @@
 package com.example.clinicapp.technician
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.findNavController
-import com.example.clinicapp.R
 import com.example.clinicapp.databinding.FragmentPatientsListBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -32,10 +28,8 @@ class PatientsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _binding = FragmentPatientsListBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,7 +39,6 @@ class PatientsListFragment : Fragment() {
         db.collection("Patients")
             .addSnapshotListener { value, e ->
                 if (e != null) {
-                    Log.w(javaClass.simpleName, "Listen failed.", e)
                     return@addSnapshotListener
                 }
                 val data = mutableListOf<Patient>()
@@ -56,9 +49,6 @@ class PatientsListFragment : Fragment() {
                 }
                 patientsAdapter.patientsData = data
             }
-
-//        val data = listOf(Patient("1. P1 | 25F"), Patient("2. P2 | 40M"), Patient("3. P5 | 18M"))
-
         binding.recyclerView2.adapter = patientsAdapter
     }
 

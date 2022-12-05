@@ -1,7 +1,6 @@
 package com.example.clinicapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -51,12 +50,10 @@ class DetailsFragment : Fragment() {
                 db.collection("Patients").document(binding.name.editText?.text.toString())
                     .set(patient)
                     .addOnSuccessListener {
-                        Log.d(javaClass.simpleName, "DocumentSnapshot")
                         findNavController().navigate(DetailsFragmentDirections.actionDetailsFragmentToSymptomsFragment(binding.name.editText?.text.toString(), binding.phone.editText?.text.toString()))
                     }
                     .addOnFailureListener { e ->
-                        Log.w(javaClass.simpleName, "Error adding document", e)
-                        Toast.makeText(activity,"Inserting data failed",Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity,"Please enter all the patient details",Toast.LENGTH_LONG).show()
                     }
             }
         }
