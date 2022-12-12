@@ -7,12 +7,49 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:487220421419:android:b78b2224a2f7fe403c9b6e",
+        "android_client_info": {
+          "package_name": "com.allergysafe.clinicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487220421419-limebllv0ts6af3rr4477q2p25u8emuc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbKXs_0pocdgV8HY0Z7uWK_BGwf7EjFBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487220421419-limebllv0ts6af3rr4477q2p25u8emuc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:487220421419:android:eb4e012965ff3d083c9b6e",
         "android_client_info": {
           "package_name": "com.example.clinicapp"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "487220421419-st49iv97g2dc3ieb2ko5o4rmc5p664df.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.clinicapp",
+            "certificate_hash": "d31edfe7e5c254555805dbbd0d35a54bd9659cdc"
+          }
+        },
         {
           "client_id": "487220421419-limebllv0ts6af3rr4477q2p25u8emuc.apps.googleusercontent.com",
           "client_type": 3
