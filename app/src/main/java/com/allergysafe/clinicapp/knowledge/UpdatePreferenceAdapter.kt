@@ -15,7 +15,7 @@ class UpdatePreferenceAdapter : RecyclerView.Adapter<UpdatePreferenceAdapter.Vie
             notifyDataSetChanged()
         }
 
-    var name = String()
+    var phone = String()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -39,13 +39,13 @@ class UpdatePreferenceAdapter : RecyclerView.Adapter<UpdatePreferenceAdapter.Vie
 
             imageView3.setOnClickListener{
                 val db = Firebase.firestore
-                db.collection("Users").document(name).collection("Knowledge").whereEqualTo("text", textView28.text.toString())
+                db.collection("Users").document(phone).collection("Knowledge").whereEqualTo("text", textView28.text.toString())
                     .addSnapshotListener { value, e ->
                         if (e != null) {
                             return@addSnapshotListener
                         }
                         for (doc in value!!) {
-                            db.collection("Users").document(name).collection("Knowledge").document(doc.id)
+                            db.collection("Users").document(phone).collection("Knowledge").document(doc.id)
                                 .delete()
                         }
                     }

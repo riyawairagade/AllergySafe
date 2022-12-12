@@ -43,7 +43,7 @@ class ExpertFragment : Fragment() {
         }
 
         binding.button2.setOnClickListener {
-            findNavController().navigate(ExpertFragmentDirections.actionExpertFragmentToUpdatePreferenceFragment(args.name))
+            findNavController().navigate(ExpertFragmentDirections.actionExpertFragmentToUpdatePreferenceFragment(args.phone))
         }
     }
 

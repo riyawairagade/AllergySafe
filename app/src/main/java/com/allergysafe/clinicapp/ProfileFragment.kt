@@ -45,6 +45,7 @@ class ProfileFragment : Fragment() {
             val duration = Toast.LENGTH_SHORT
             val yrs = binding.experience.editText?.text.toString()
             val name = binding.username.editText?.text.toString()
+            val phonenum = binding.phonenum.editText?.text.toString()
             val clinic = binding.clinic.editText?.text.toString()
             val edu = binding.education.editText?.text.toString()
             val cases = binding.cases.editText?.text.toString()
@@ -68,13 +69,19 @@ class ProfileFragment : Fragment() {
                 }
             }
 
-            val user = hashMapOf("Name" to name, "Clinic" to clinic,"Education" to edu,"Years" to yrs,"Cases" to cases, "Type" to type)
-            db.collection("Users").add(user)
-                .addOnSuccessListener { documentReference ->
-                    binding.uname.text = documentReference.id
-                }
-            val toast = Toast.makeText(this.context, text, duration)
-            toast.show()
+            val user = hashMapOf("Name" to name, "Phone" to phonenum, "Clinic" to clinic,"Education" to edu,"Years" to yrs,"Cases" to cases, "Type" to type)
+            if(binding.username.editText?.text.isNullOrBlank() || binding.phonenum.editText?.text.isNullOrBlank() || binding.clinic.editText?.text.isNullOrBlank() || binding.education.editText?.text.isNullOrBlank() || binding.experience.editText?.text.isNullOrBlank() || binding.cases.editText?.text.isNullOrBlank()){
+                Toast.makeText(activity,"Please enter all the patient details",Toast.LENGTH_LONG).show()
+            }
+            else{
+                db.collection("Users").document(phonenum)
+                    .set(user)
+                    .addOnSuccessListener {
+                        binding.uname.text = phonenum
+                    }
+                val toast = Toast.makeText(this.context, text, duration)
+                toast.show()
+            }
         }
 
         binding.login.setOnClickListener {

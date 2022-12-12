@@ -37,10 +37,15 @@ class UpdatePreferenceFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        updatePreferenceAdapter.name = args.name
+        updatePreferenceAdapter.phone = args.phone
         super.onViewCreated(view, savedInstanceState)
         val db = Firebase.firestore
-        db.collection("Users").document(args.name).collection("Knowledge")
+        var name = ""
+        db.collection("Users").document(args.phone).get().addOnSuccessListener {
+            name = it.getString("Name").toString()
+        }
+
+        db.collection("Users").document(args.phone).collection("Knowledge")
             .addSnapshotListener { value, e ->
                 if (e != null) {
                     return@addSnapshotListener
@@ -48,7 +53,7 @@ class UpdatePreferenceFragment : Fragment() {
                 val ndata = mutableListOf<Knowledge>()
                 for (doc in value!!) {
                     doc.getString("text")?.let { it ->
-                        ndata.add(Knowledge(args.name, it))
+                        ndata.add(Knowledge(name, args.phone, it))
                     }
                 }
                 updatePreferenceAdapter.data = ndata
@@ -58,7 +63,7 @@ class UpdatePreferenceFragment : Fragment() {
         binding.floatingActionButton2.setOnClickListener{
             val pref = binding.editTextTextPersonName.editText?.text.toString()
             val newData = hashMapOf("text" to pref)
-            db.collection("Users").document(args.name).collection("Knowledge").add(newData)
+            db.collection("Users").document(args.phone).collection("Knowledge").add(newData)
         }
     }
 

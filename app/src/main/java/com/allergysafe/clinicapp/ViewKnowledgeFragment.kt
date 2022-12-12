@@ -54,7 +54,7 @@ class ViewKnowledgeFragment : Fragment() {
                                 return@addSnapshotListener
                             }
                             for (d in result!!) {
-                                data.add(Knowledge(n, d.get("text").toString()))
+                                data.add(Knowledge(n, doc.id, d.get("text").toString()))
                             }
                             viewKnowledgeAdapter.data = data
                         }
